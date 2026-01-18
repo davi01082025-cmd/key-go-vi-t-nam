@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="KEYGO - Dịch vụ sửa khóa tại nhà 24/7 uy tín. Hotline: 0383.500.236.">
+    <title>KEYGO - Dịch Vụ Sửa Khóa Toàn Quốc | Hotline 0383.500.236</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* --- 1. CORE VARIABLES --- */
+        :root {
+            --brand-blue: #003B73;
+            --brand-yellow: #FFC107;
+            --brand-orange: #FF9800;
+            --brand-dark: #001529;
+            --text-body: #444;
+            --bg-light: #F8FBFF;
+            --header-h: 70px;
+            --bottom-nav-h: 80px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-body);
+            overflow-x: hidden;
+            line-height: 1.6;
+            font-size: 16px;
+            padding-bottom: 0;
+        }
+
+        body.no-scroll {
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        /* --- 2. ADVANCED ANIMATIONS (NEW) --- */
+
+        /* Hiệu ứng trượt lên mềm mại */
+        @keyframes fadeInUpSoft {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hiệu ứng nhịp tim cho nút gọi */
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.7);
+            }
+
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 15px rgba(255, 193, 7, 0);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 193, 7, 0);
+            }
+        }
+
+        /* Hiệu ứng nảy khi hiện Modal - POPUP */
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            70% {
+                opacity: 1;
+                transform: scale(1.02);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Hiệu ứng bay vào của các nút trong Modal */
+        @keyframes slideInUpStagger {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float-img {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        /* --- 3. HEADER --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: var(--header-h);
+            z-index: 1000;
+            background: rgba(0, 59, 115, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 3px solid var(--brand-yellow);
+            display: flex;
+            align-items: center;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .header-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: 900;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .logo i {
+            color: var(--brand-yellow);
+            font-size: 30px;
+            transform: rotate(-45deg);
+        }
+
+        .nav-desk {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-link {
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            color: white;
+            padding: 10px 0;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--brand-yellow);
+        }
+
+        /* --- 4. HERO SECTION --- */
+        .hero {
+            padding-top: 140px;
+            padding-bottom: 70px;
+            /* Background động nhẹ */
+            background: linear-gradient(135deg, #001529, #003B73, #002347);
+            background-size: 200% 200%;
+            animation: gradientMove 15s ease infinite;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%
+            }
+
+            50% {
+                background-position: 100% 50%
+            }
+
+            100% {
+                background-position: 0% 50%
+            }
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, rgba(255, 193, 7, 0.15) 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.6;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 193, 7, 0.2);
+            color: var(--brand-yellow);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 12px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255, 193, 7, 0.5);
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            color: white;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero h1 span {
+            color: var(--brand-yellow);
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: #e0e0e0;
+            margin-bottom: 35px;
+            max-width: 90%;
+        }
+
+        /* NÚT CTA HERO - CÓ NHỊP TIM */
+        .btn-cta {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(45deg, #FFC107, #FF9800);
+            color: var(--brand-blue);
+            font-weight: 900;
+            font-size: 16px;
+            padding: 16px 45px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-transform: uppercase;
+            box-shadow: 0 10px 25px rgba(255, 152, 0, 0.4);
+            animation: heartbeat 2s infinite;
+            /* Thêm nhịp tim */
+            transition: 0.3s;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(255, 152, 0, 0.6);
+        }
+
+        .hero-img {
+            flex: 1;
+            text-align: right;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .hero-img img {
+            max-width: 100%;
+            width: 500px;
+            animation: float-img 5s ease-in-out infinite;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
+        }
+
+        .wave-bottom svg {
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 80px;
+            fill: var(--bg-light);
+        }
+
+        /* --- 5. SERVICES --- */
+        .section {
+            padding: 80px 0;
+        }
+
+        .sec-head {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .sec-head h2 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            color: var(--brand-blue);
+        }
+
+        .sec-head h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 5px;
+            background: var(--brand-yellow);
+            margin: 15px auto 0;
+            border-radius: 5px;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        /* CARD DỊCH VỤ - MƯỢT HƠN */
+        .card {
+            background: white;
+            padding: 35px 20px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 59, 115, 0.05);
+            border: 1px solid #fff;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            /* Hiệu ứng nảy khi hover */
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0, 59, 115, 0.15);
+            border-bottom: 5px solid var(--brand-yellow);
+        }
+
+        .card-icon {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 20px;
+            background: #E3F2FD;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: var(--brand-blue);
+            transition: 0.4s;
+        }
+
+        .card:hover .card-icon {
+            background: var(--brand-blue);
+            color: var(--brand-yellow);
+            transform: rotateY(180deg);
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--brand-dark);
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: auto;
+        }
+
+        .link-more {
+            margin-top: 20px;
+            font-weight: 800;
+            color: var(--brand-blue);
+            font-size: 13px;
+            padding: 12px 25px;
+            border-radius: 30px;
+            background: rgba(0, 59, 115, 0.05);
+            display: inline-block;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .link-more:hover {
+            background: var(--brand-blue);
+            color: white;
+        }
+
+        /* --- 6. WHOLESALE --- */
+        #wholesale {
+            background: var(--brand-blue);
+            padding: 80px 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ws-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .ws-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 30px 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+
+        .ws-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+            border-color: var(--brand-yellow);
+        }
+
+        .ws-card i {
+            font-size: 40px;
+            margin-bottom: 15px;
+            display: block;
+            color: var(--brand-yellow);
+        }
+
+        .ws-card h4 {
+            font-size: 15px;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .ws-card .price {
+            color: var(--brand-yellow);
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* --- 7. FOOTER --- */
+        footer {
+            background: linear-gradient(to bottom, #001529, #000811);
+            color: #b0b0b0;
+            padding: 80px 0 30px;
+            font-size: 14px;
+            border-top: 5px solid var(--brand-yellow);
+            position: relative;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h3 {
+            color: white;
+            font-size: 18px;
+            margin-bottom: 25px;
+            font-weight: 800;
+            position: relative;
+            padding-left: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-col h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 100%;
+            background: var(--brand-yellow);
+            border-radius: 2px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer-col ul li a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--brand-yellow);
+            transform: translateX(5px);
+        }
+
+        .seo-box {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .tag-cloud a {
+            font-size: 12px;
+            color: #aaa;
+            padding: 6px 12px;
+            border-radius: 50px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.2s;
+        }
+
+        .tag-cloud a:hover {
+            color: var(--brand-blue);
+            background: var(--brand-yellow);
+            font-weight: bold;
+            border-color: var(--brand-yellow);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 13px;
+            color: #666;
+        }
+
+        /* --- 8. MOBILE BOTTOM NAV --- */
+        .mobile-bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: var(--bottom-nav-h);
+            background: rgba(0, 21, 41, 0.95);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            display: none;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 0 15px 12px 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+        }
+
+        .nav-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            color: #8899A6;
+            text-decoration: none;
+            transition: 0.3s;
+            height: 100%;
+        }
+
+        .nav-item i {
+            font-size: 22px;
+            margin-bottom: 6px;
+        }
+
+        .nav-item span {
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-item.active {
+            color: white;
+        }
+
+        .nav-item.active i {
+            color: var(--brand-yellow);
+            transform: translateY(-3px);
+        }
+
+        .center-fab-wrapper {
+            position: relative;
+            top: -5px;
+            width: 75px;
+            height: 75px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .center-fab {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #FFC107, #FF9800);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 5px solid var(--bg-light);
+            color: var(--brand-blue);
+            font-size: 32px;
+            cursor: pointer;
+            animation: heartbeat 2s infinite;
+            /* Thêm nhịp tim cho nút dưới luôn */
+            box-shadow: 0 10px 20px rgba(255, 152, 0, 0.4);
+        }
+
+        /* --- 9. MODAL POPUP (CẢI TIẾN HIỆU ỨNG) --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 10000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            backdrop-filter: blur(8px);
+            /* Blur nhiều hơn chút */
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-box {
+            width: 100%;
+            max-width: 360px;
+            background: white;
+            border-radius: 24px;
+            padding: 30px 20px;
+            position: relative;
+            /* Sửa lại animation để dùng class kích hoạt */
+            transform: scale(0.8);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* Class này sẽ được JS thêm vào để kích hoạt animation PopIn */
+        .modal-box.active-anim {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #999;
+            cursor: pointer;
+            border-radius: 50%;
+            background: #f5f5f5;
+            z-index: 10;
+            transition: 0.3s;
+        }
+
+        .close-modal:hover {
+            background: #eee;
+            transform: rotate(90deg);
+            color: #333;
+        }
+
+        /* STYLE CHO CÁC NÚT LIÊN HỆ (HIỆU ỨNG BAY VÀO STAGGER) */
+        .opt-btn {
+            opacity: 0;
+            /* Mặc định ẩn */
+            transform: translateY(20px);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        /* Khi modal active, các nút sẽ hiện */
+        .modal-box.active-anim .opt-btn {
+            animation: slideInUpStagger 0.5s forwards;
+        }
+
+        /* Chỉnh độ trễ cho từng nút để chúng bay vào lần lượt */
+        .modal-box.active-anim .opt-btn:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .modal-box.active-anim .opt-btn:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .modal-box.active-anim .opt-btn:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .opt-btn:hover {
+            transform: translateY(-3px) scale(1.02) !important;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- 10. NEWS DETAIL MODAL --- */
+        .news-detail-box {
+            width: 100%;
+            max-width: 600px;
+            background: white;
+            border-radius: 15px;
+            position: relative;
+            animation: popIn 0.4s ease-out forwards;
+            max-height: 85vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+        }
+
+        .news-scroll-wrap {
+            overflow-y: auto;
+            flex: 1;
+            position: relative;
+        }
+
+        .blog-call-btn {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #FFC107, #FF9800);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--brand-blue);
+            font-size: 24px;
+            box-shadow: 0 10px 25px rgba(255, 152, 0, 0.5);
+            animation: heartbeat 2s infinite;
+            cursor: pointer;
+            border: 4px solid white;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .blog-call-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .news-content {
+            padding: 25px;
+        }
+
+        .news-content p {
+            margin-bottom: 15px;
+            color: #555;
+            font-size: 15px;
+            text-align: justify;
+        }
+
+        /* Scroll Animation Class */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-200 {
+            transition-delay: 0.2s;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .nav-desk {
+                display: none;
+            }
+
+            .mobile-bottom-nav {
+                display: flex;
+            }
+
+            body {
+                padding-bottom: calc(var(--bottom-nav-h) + 10px);
+            }
+
+            .hero {
+                padding-top: 100px;
+                text-align: center;
+            }
+
+            .hero-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .hero-img {
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .ws-wrap {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .ws-grid {
+                width: 100%;
+                grid-template-columns: 1fr;
+            }
+
+            .center-fab {
+                border-color: rgba(248, 251, 255, 1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="container header-wrap">
+            <div class="logo" onclick="window.scrollTo(0,0)">
+                <i class="fas fa-key"></i> KEY<span>GO</span>
+            </div>
+            <nav class="nav-desk">
+                <a href="#about" class="nav-link">Giới Thiệu</a>
+                <a href="#services" class="nav-link">Dịch Vụ</a>
+                <a href="#wholesale" class="nav-link">Kho Sỉ</a>
+                <a href="#blog" class="nav-link">Tin Tức</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <div class="hero-text reveal">
+                <div class="hero-tag"><i class="fas fa-bolt"></i> CỨU HỘ KHÓA 24/7</div>
+                <h1>THỢ KHÓA GẦN BẠN<br><span>CÓ MẶT SAU 15 PHÚT</span></h1>
+                <p>Hệ thống kết nối 500+ thợ khóa chuyên nghiệp. Cam kết giá rẻ, minh bạch, bảo hành dài hạn.</p>
+                <button class="btn-cta" onclick="togglePopup()">
+                    <i class="fas fa-phone-alt"></i> LIÊN HỆ KEYGO
+                </button>
+            </div>
+            <div class="hero-img reveal delay-200">
+                <img src="https://i.imgur.com/PfIdvK5.png" alt="Keygo Mascot Thợ Khóa">
+            </div>
+        </div>
+        <div class="wave-bottom">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z">
+                </path>
+            </svg>
+        </div>
+    </section>
+
+    <section class="section" id="services">
+        <div class="container">
+            <div class="sec-head reveal">
+                <h2>DỊCH VỤ NỔI BẬT</h2>
+                <p>Giải pháp xử lý mọi sự cố về khóa an toàn, nhanh chóng.</p>
+            </div>
+            <div class="service-grid">
+                <div class="card reveal">
+                    <div class="card-icon"><i class="fas fa-home"></i></div>
+                    <h3>Khóa Nhà Cửa</h3>
+                    <p>Mở khóa cửa gỗ, cửa kính, thay ổ khóa tay gạt, khóa nắm tròn chính hãng.</p>
+                    <span class="link-more" onclick="togglePopup()">GỌI THỢ</span>
+                </div>
+                <div class="card reveal delay-200"
+                    style="border-color: var(--brand-yellow); box-shadow: 0 15px 40px rgba(255, 193, 7, 0.15);">
+                    <div class="card-icon" style="background:var(--brand-blue); color:var(--brand-yellow);"><i
+                            class="fas fa-car"></i></div>
+                    <h3 style="color:var(--brand-blue)">Khóa Ô Tô/Xe Máy</h3>
+                    <p>Cứu hộ mở cửa xe quên chìa, làm chìa Smartkey, sửa ổ khóa bị vam trộm.</p>
+                    <span class="link-more" style="background:var(--brand-yellow); color:var(--brand-blue);"
+                        onclick="togglePopup()">GỌI NGAY</span>
+                </div>
+                <div class="card reveal">
+                    <div class="card-icon"><i class="fas fa-vault"></i></div>
+                    <h3>Mở Két Sắt</h3>
+                    <p>Dò mã két sắt quên mật khẩu, kẹt chìa cơ, sửa mạch điện tử két sắt.</p>
+                    <span class="link-more" onclick="togglePopup()">GỌI THỢ</span>
+                </div>
+                <div class="card reveal delay-200">
+                    <div class="card-icon"><i class="fas fa-fingerprint"></i></div>
+                    <h3>Khóa Điện Tử</h3>
+                    <p>Lắp đặt, cài đặt lại khóa vân tay, thẻ từ, khóa mã số cho căn hộ, khách sạn.</p>
+                    <span class="link-more" onclick="togglePopup()">GỌI THỢ</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="wholesale">
+        <div class="container ws-wrap">
+            <div class="ws-info reveal">
+                <span
+                    style="background:var(--brand-yellow); color:var(--brand-blue); padding:4px 12px; border-radius:4px; font-weight:bold; font-size:12px; margin-bottom:15px; display:inline-block;">DÀNH
+                    CHO ĐỐI TÁC</span>
+                <h2 style="font-size:2.5rem; margin-bottom:15px; color:white;">SẢN XUẤT PHỤ KIỆN <br><span
+                        style="color:var(--brand-yellow)">& ĐỒ NGHỀ</span></h2>
+                <p style="margin-bottom:25px; color:#ddd;">Cung cấp phôi chìa, máy CNC, dụng cụ mở khóa giá gốc tận
+                    xưởng cho anh em thợ toàn quốc.</p>
+                <button class="btn-cta"
+                    style="background:white; color:var(--brand-blue); box-shadow:none; font-size:14px; padding:12px 30px;"
+                    onclick="openFormDirectly()">
+                    ĐĂNG KÝ ĐẠI LÝ <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+            <div class="ws-grid reveal delay-200">
+                <div class="ws-card" onclick="togglePopup()"><i class="fas fa-microchip"></i>
+                    <h4>Máy CNC X2</h4>
+                    <div class="price">Liên Hệ</div>
+                </div>
+                <div class="ws-card" onclick="togglePopup()"><i class="fas fa-key"></i>
+                    <h4>100 Phôi</h4>
+                    <div class="price">350.000đ</div>
+                </div>
+                <div class="ws-card" onclick="togglePopup()"><i class="fas fa-tools"></i>
+                    <h4>Bộ Mở Đa Năng</h4>
+                    <div class="price">1.200.000đ</div>
+                </div>
+                <div class="ws-card" onclick="togglePopup()"><i class="fas fa-car"></i>
+                    <h4>Phôi Smartkey</h4>
+                    <div class="price">250.000đ</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="blog" style="background:white;">
+        <div class="container">
+            <div class="sec-head reveal">
+                <h2>KIẾN THỨC & TIN TỨC</h2>
+                <p>Chia sẻ kinh nghiệm bảo vệ tài sản và các mẹo về khóa.</p>
+            </div>
+
+            <div id="blog-container"
+                style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:25px; margin-bottom:30px;">
+                <article class="blog-item reveal" onclick="openNews(this)">
+                    <div style="height:160px; background:#eee; position:relative;">
+                        <img src="https://images.unsplash.com/photo-1558002038-1091a166111c?w=500&auto=format&fit=crop&q=60"
+                            style="width:100%; height:100%; object-fit:cover; border-radius:12px 12px 0 0;">
+                    </div>
+                    <div
+                        style="padding:20px; border:1px solid #eee; border-top:none; border-radius:0 0 12px 12px; cursor:pointer;">
+                        <h3 style="font-size:16px; margin-bottom:10px; color:var(--brand-blue);">Mất chìa khóa Smartkey
+                            ô tô phải làm sao?</h3>
+                        <p style="font-size:13px; color:#666; margin-bottom:15px;">Hướng dẫn xử lý khi mất hết chìa khóa
+                            thông minh.</p>
+                        <span style="color:var(--brand-orange); font-size:12px; font-weight:bold;">XEM CHI TIẾT</span>
+                    </div>
+                </article>
+
+                <article class="blog-item reveal delay-200" onclick="openNews(this)">
+                    <div style="height:160px; background:#eee; position:relative;">
+                        <img src="https://images.unsplash.com/photo-1582139329536-e7284fece509?w=500&auto=format&fit=crop&q=60"
+                            style="width:100%; height:100%; object-fit:cover; border-radius:12px 12px 0 0;">
+                    </div>
+                    <div
+                        style="padding:20px; border:1px solid #eee; border-top:none; border-radius:0 0 12px 12px; cursor:pointer;">
+                        <h3 style="font-size:16px; margin-bottom:10px; color:var(--brand-blue);">Cách mở két sắt khi
+                            quên mật khẩu</h3>
+                        <p style="font-size:13px; color:#666; margin-bottom:15px;">Tổng hợp 3 cách dò mã két sắt an toàn
+                            tại nhà.</p>
+                        <span style="color:var(--brand-orange); font-size:12px; font-weight:bold;">XEM CHI TIẾT</span>
+                    </div>
+                </article>
+
+                <article class="blog-item reveal" onclick="openNews(this)">
+                    <div style="height:160px; background:#eee; position:relative;">
+                        <img src="https://plus.unsplash.com/premium_photo-1661913495856-121526d13d78?w=500&auto=format&fit=crop&q=60"
+                            style="width:100%; height:100%; object-fit:cover; border-radius:12px 12px 0 0;">
+                    </div>
+                    <div
+                        style="padding:20px; border:1px solid #eee; border-top:none; border-radius:0 0 12px 12px; cursor:pointer;">
+                        <h3 style="font-size:16px; margin-bottom:10px; color:var(--brand-blue);">Dấu hiệu ổ khóa cửa sắp
+                            hỏng</h3>
+                        <p style="font-size:13px; color:#666; margin-bottom:15px;">Nhận biết kẹt khóa, rít chìa để thay
+                            thế kịp thời.</p>
+                        <span style="color:var(--brand-orange); font-size:12px; font-weight:bold;">XEM CHI TIẾT</span>
+                    </div>
+                </article>
+
+                <article class="blog-item reveal" style="display:none;" onclick="openNews(this)">
+                    <div style="height:160px; background:#eee; position:relative;">
+                        <img src="https://images.unsplash.com/photo-1516937941348-c03e56c36815?w=500&auto=format&fit=crop&q=60"
+                            style="width:100%; height:100%; object-fit:cover; border-radius:12px 12px 0 0;">
+                    </div>
+                    <div
+                        style="padding:20px; border:1px solid #eee; border-top:none; border-radius:0 0 12px 12px; cursor:pointer;">
+                        <h3 style="font-size:16px; margin-bottom:10px; color:var(--brand-blue);">Top 5 khóa vân tay tốt
+                            nhất 2026</h3>
+                        <p style="font-size:13px; color:#666; margin-bottom:15px;">Review chi tiết các mẫu khóa điện tử
+                            giá rẻ mà bền.</p>
+                        <span style="color:var(--brand-orange); font-size:12px; font-weight:bold;">XEM CHI TIẾT</span>
+                    </div>
+                </article>
+
+                <article class="blog-item reveal" style="display:none;" onclick="openNews(this)">
+                    <div style="height:160px; background:#eee; position:relative;">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&auto=format&fit=crop&q=60"
+                            style="width:100%; height:100%; object-fit:cover; border-radius:12px 12px 0 0;">
+                    </div>
+                    <div
+                        style="padding:20px; border:1px solid #eee; border-top:none; border-radius:0 0 12px 12px; cursor:pointer;">
+                        <h3 style="font-size:16px; margin-bottom:10px; color:var(--brand-blue);">Cảnh báo trộm cắp dịp
+                            Lễ Tết</h3>
+                        <p style="font-size:13px; color:#666; margin-bottom:15px;">Các thủ đoạn bẻ khóa mới và cách
+                            phòng tránh.</p>
+                        <span style="color:var(--brand-orange); font-size:12px; font-weight:bold;">XEM CHI TIẾT</span>
+                    </div>
+                </article>
+            </div>
+
+            <div id="viewMoreBtn" style="text-align:center; display:none; margin-top:10px;">
+                <button onclick="loadMoreBlog()"
+                    style="background:white; color:var(--brand-blue); border:1px solid var(--brand-blue); padding:10px 30px; border-radius:25px; font-weight:bold; cursor:pointer; transition:0.3s;">
+                    XEM THÊM TIN TỨC <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div style="font-size:30px; font-weight:900; color:white; margin-bottom:20px; letter-spacing:-1px;">
+                        KEY<span style="color:var(--brand-yellow)">GO</span></div>
+                    <p style="line-height:1.8;">Nền tảng công nghệ kết nối thợ khóa hàng đầu Việt Nam. Chúng tôi cam kết
+                        mang lại sự an tâm tuyệt đối cho khách hàng.</p>
+                    <div style="display:flex; gap:15px; margin-top:20px;">
+                        <a href="#"
+                            style="width:40px; height:40px; background:rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; border-radius:50%; color:white;"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#"
+                            style="width:40px; height:40px; background:rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; border-radius:50%; color:white;"><i
+                                class="fab fa-tiktok"></i></a>
+                        <a href="#"
+                            style="width:40px; height:40px; background:rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; border-radius:50%; color:white;"><i
+                                class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Dịch Vụ Chính</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Sửa khóa tại nhà</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Làm chìa khóa ô tô</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Mở khóa két sắt</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Sao chép thẻ từ</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Cứu hộ khóa 24/7</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Liên Hệ</h3>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Trụ sở: Hà Nội & TP.HCM</a></li>
+                        <li><a href="tel:0383500236"><i class="fas fa-phone-alt"></i> Hotline: <b
+                                    style="color:white; font-size:16px;">0383.500.236</b></a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> hotro@keygo.vn</a></li>
+                        <li><a href="#"><i class="fas fa-clock"></i> Phục vụ 24/7 cả Lễ Tết</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="seo-box">
+                <span class="seo-title">Khu vực & Từ khóa phổ biến:</span>
+                <div class="tag-cloud">
+                    <a href="#">Sửa khóa Cầu Giấy</a> <a href="#">Thợ khóa Quận 1</a> <a href="#">Mở khóa Hà Đông</a>
+                    <a href="#">Làm chìa Smartkey Honda</a> <a href="#">Mở két sắt Việt Tiệp</a> <a href="#">Sửa khóa
+                        cửa cuốn</a>
+                    <a href="#">Thay ổ khóa tại nhà</a> <a href="#">Cắt chìa khóa ô tô</a> <a href="#">Thợ khóa Đà
+                        Nẵng</a>
+                    <a href="#">Sửa khóa Quận 7</a> <a href="#">Sửa khóa Bình Thạnh</a>
+                </div>
+            </div>
+            <div class="copyright">© 2026 KEYGO Vietnam. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <nav class="mobile-bottom-nav">
+        <a href="#home" class="nav-item active" onclick="setActiveNav(this)">
+            <i class="fas fa-home"></i> <span>Trang chủ</span>
+        </a>
+        <a href="#services" class="nav-item" onclick="setActiveNav(this)">
+            <i class="fas fa-tools"></i> <span>Dịch vụ</span>
+        </a>
+        <div class="center-fab-wrapper" onclick="togglePopup()">
+            <div class="center-fab">
+                <i class="fas fa-phone-alt"></i>
+            </div>
+        </div>
+        <a href="#wholesale" class="nav-item" onclick="setActiveNav(this)">
+            <i class="fas fa-box-open"></i> <span>Kho sỉ</span>
+        </a>
+        <a href="#blog" class="nav-item" onclick="setActiveNav(this)">
+            <i class="fas fa-newspaper"></i> <span>Tin tức</span>
+        </a>
+    </nav>
+
+    <div class="modal-overlay" id="contactModal">
+        <div class="modal-box">
+            <div class="close-modal" onclick="togglePopup()">&times;</div>
+            <h3 style="color:var(--brand-blue); text-align:center; margin-bottom:5px;">GỌI THỢ NGAY</h3>
+            <p style="text-align:center; color:#666; font-size:13px; margin-bottom:25px;">Thợ khóa gần nhất sẽ gọi lại
+                sau 30s</p>
+
+            <div id="optionsView">
+                <a href="tel:0383500236" class="opt-btn"
+                    style="background:#FFF5F5; border:1px solid #FFCDD2; display:flex; align-items:center; padding:15px; border-radius:15px; margin-bottom:15px; text-decoration:none;">
+                    <div
+                        style="width:50px; height:50px; background:#E63946; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-right:15px; color:white; font-size:22px;">
+                        <i class="fas fa-phone-alt"></i></div>
+                    <div>
+                        <h4 style="color:#E63946; margin-bottom:2px; font-size:18px;">GỌI 0383.500.236</h4><span
+                            style="font-size:12px; color:#666;">Kết nối trực tiếp thợ</span>
+                    </div>
+                </a>
+                <a href="https://zalo.me/0383500236" target="_blank" class="opt-btn"
+                    style="background:#E3F2FD; border:1px solid #BBDEFB; display:flex; align-items:center; padding:15px; border-radius:15px; margin-bottom:15px; text-decoration:none;">
+                    <div
+                        style="width:50px; height:50px; background:#0068FF; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-right:15px; color:white; font-size:22px;">
+                        <i class="fas fa-comment-dots"></i></div>
+                    <div>
+                        <h4 style="color:#0068FF; margin-bottom:2px; font-size:18px;">CHAT ZALO</h4><span
+                            style="font-size:12px; color:#666;">Gửi ảnh khóa hỏng báo giá</span>
+                    </div>
+                </a>
+                <div class="opt-btn" onclick="showForm()"
+                    style="background:#FFF8E1; border:1px solid #FFECB3; display:flex; align-items:center; padding:15px; border-radius:15px; margin-bottom:15px; cursor:pointer;">
+                    <div
+                        style="width:50px; height:50px; background:#FFC107; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-right:15px; color:white; font-size:22px;">
+                        <i class="fas fa-file-signature"></i></div>
+                    <div>
+                        <h4 style="color:#F57F17; margin-bottom:2px; font-size:18px;">ĐĂNG KÝ / TƯ VẤN</h4><span
+                            style="font-size:12px; color:#666;">Để lại SĐT thợ sẽ gọi lại</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="formView" style="display:none;">
+                <p style="text-align:center; font-size:13px; color:#666; margin-bottom:15px;">Điền thông tin bên dưới
+                </p>
+                <input type="tel" id="inputPhone" placeholder="Số điện thoại của bạn (*)"
+                    style="width:100%; padding:14px; border:1px solid #ddd; border-radius:10px; margin-bottom:12px; background:#f9f9f9;">
+                <input type="text" id="inputLoc" placeholder="Khu vực (Ví dụ: Cầu Giấy...)"
+                    style="width:100%; padding:14px; border:1px solid #ddd; border-radius:10px; margin-bottom:12px; background:#f9f9f9;">
+                <button onclick="submitForm()"
+                    style="width:100%; background:var(--brand-blue); color:white; padding:14px; border:none; border-radius:10px; font-weight:900; cursor:pointer; font-size:16px;">YÊU
+                    CẦU GỌI LẠI</button>
+                <div onclick="hideForm()"
+                    style="text-align:center; margin-top:15px; font-size:13px; cursor:pointer; color:#888; text-decoration:underline;">
+                    Quay lại chọn cách khác</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="newsModal">
+        <div class="news-detail-box">
+            <div class="close-modal" onclick="closeNews()" style="position:absolute; top:15px; right:15px; z-index:20;">
+                &times;</div>
+            <div class="news-scroll-wrap">
+                <div style="width:100%; height:250px; overflow:hidden;">
+                    <img id="newsImg" src="" style="width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div class="news-content">
+                    <h2 id="newsTitle" style="color:var(--brand-blue); margin-bottom:15px; line-height:1.4;"></h2>
+                    <div style="font-size:12px; color:#999; margin-bottom:20px;"><i class="fas fa-clock"></i> 15/01/2026
+                        - Bởi Admin</div>
+                    <div id="newsBody">
+                        <p><strong>(KEYGO News)</strong> - Đây là nội dung chi tiết của bài viết. Trong thực tế, phần
+                            này sẽ chứa thông tin hướng dẫn cụ thể, hình ảnh minh họa và các bước thực hiện để giúp
+                            khách hàng giải quyết vấn đề.</p>
+                        <p>Hệ thống khóa thông minh (Smartkey) ngày nay rất phổ biến nhưng cũng đi kèm nhiều rủi ro nếu
+                            người dùng không biết cách bảo quản. Bài viết này sẽ cung cấp 3 mẹo quan trọng nhất:</p>
+                        <p>1. Luôn giữ mã ID thẻ khóa ở nơi an toàn.<br>2. Thay pin định kỳ 6 tháng/lần để tránh pin yếu
+                            đột ngột.<br>3. Không treo chìa khóa ở nơi ẩm ướt hoặc nhiệt độ cao.</p>
+                        <p>Nếu gặp sự cố khẩn cấp, đừng ngần ngại gọi ngay cho đội ngũ KEYGO qua hotline
+                            <strong>0383.500.236</strong> để được hỗ trợ 24/7.</p>
+                        <div
+                            style="background:#f5f5f5; padding:15px; border-radius:10px; margin-top:20px; text-align:center;">
+                            <h4 style="color:var(--brand-blue);">Cần thợ khóa gấp?</h4>
+                            <button onclick="togglePopup(); closeNews();"
+                                style="background:var(--brand-yellow); border:none; padding:10px 25px; border-radius:20px; font-weight:bold; margin-top:10px; cursor:pointer;">GỌI
+                                NGAY</button>
+                        </div>
+                        <div style="height: 60px;"></div> <!-- Spacer for floating button -->
+                    </div>
+                </div>
+            </div>
+            <!-- Sticky Call Button inside Modal -->
+            <a href="tel:0383500236" class="blog-call-btn" title="Gọi Ngay">
+                <i class="fas fa-phone-alt"></i>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        const toggleBodyScroll = (lock) => document.body.classList.toggle('no-scroll', lock);
+
+        function togglePopup(force = false) {
+            const overlay = document.getElementById('contactModal');
+            const box = overlay.querySelector('.modal-box');
+
+            if (overlay.style.display === 'flex' && !force) {
+                // Đóng
+                overlay.style.display = 'none';
+                toggleBodyScroll(false);
+                box.classList.remove('active-anim'); // Reset animation
+            } else {
+                // Mở
+                overlay.style.display = 'flex';
+                hideForm();
+                toggleBodyScroll(true);
+                // Thêm timeout nhỏ để animation hoạt động mượt
+                setTimeout(() => {
+                    box.classList.add('active-anim');
+                }, 10);
+            }
+        }
+        function showForm() { document.getElementById('optionsView').style.display = 'none'; document.getElementById('formView').style.display = 'block'; }
+        function hideForm() { document.getElementById('optionsView').style.display = 'block'; document.getElementById('formView').style.display = 'none'; }
+        function openFormDirectly() { togglePopup(true); showForm(); }
+
+        function submitForm() {
+            const p = document.getElementById('inputPhone').value;
+            if (!p || p.length < 9) { alert("⚠️ Vui lòng nhập Số điện thoại đúng!"); return; }
+            alert("✅ ĐÃ GỬI THÀNH CÔNG!\nChúng tôi sẽ liên hệ số " + p + " ngay lập tức.");
+            togglePopup();
+        }
+
+        // --- SCRIPT XỬ LÝ TIN TỨC ---
+        function openNews(el) {
+            const img = el.querySelector('img').src;
+            const title = el.querySelector('h3').innerText;
+
+            document.getElementById('newsImg').src = img;
+            document.getElementById('newsTitle').innerText = title;
+
+            document.getElementById('newsModal').style.display = 'flex';
+            toggleBodyScroll(true);
+        }
+        function closeNews() {
+            document.getElementById('newsModal').style.display = 'none';
+            toggleBodyScroll(false);
+        }
+
+        function setActiveNav(el) {
+            document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+            el.classList.add('active');
+        }
+
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+            else header.style.boxShadow = 'none';
+
+            const sections = document.querySelectorAll('section');
+            const navItems = document.querySelectorAll('.nav-item');
+            let current = '';
+            sections.forEach(sec => { if (pageYOffset >= sec.offsetTop - 200) current = sec.getAttribute('id'); });
+            navItems.forEach(li => {
+                li.classList.remove('active');
+                if (li.getAttribute('href').includes(current)) li.classList.add('active');
+            });
+        });
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        window.onclick = function (e) {
+            if (e.target == document.getElementById('contactModal')) togglePopup();
+            if (e.target == document.getElementById('newsModal')) closeNews();
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const items = document.querySelectorAll('.blog-item');
+            const btnDiv = document.getElementById('viewMoreBtn');
+            const maxVisible = 3;
+            if (items.length > maxVisible) {
+                btnDiv.style.display = 'block';
+                items.forEach((item, index) => {
+                    if (index >= maxVisible) item.style.display = 'none';
+                    else item.style.display = 'block';
+                });
+            }
+        });
+
+        function loadMoreBlog() {
+            const items = document.querySelectorAll('.blog-item');
+            items.forEach(item => { item.style.display = 'block'; item.classList.add('active'); });
+            document.getElementById('viewMoreBtn').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
